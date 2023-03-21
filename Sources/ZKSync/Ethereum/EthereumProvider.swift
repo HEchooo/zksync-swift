@@ -55,7 +55,7 @@ public class EthereumProvider {
 
         do {
             let tx = try erc20.approve(from: ethereumAddress,
-                                       spender: ethereumAddress,
+                                       spender: zkSync.contractAddress,
                                        amount: amount)
             return tx.sendPromise()
         } catch {
