@@ -42,6 +42,9 @@ public class EthereumProvider {
         } else if let keystore = keystore as? BIP32Keystore {
             let keystoreManager = KeystoreManager([keystore])
             self.web3.addKeystoreManager(keystoreManager)
+        } else if let keystore = keystore as? PlainKeystore {
+            let keystoreManager = KeystoreManager([keystore])
+            self.web3.addKeystoreManager(keystoreManager)
         }
     }
 

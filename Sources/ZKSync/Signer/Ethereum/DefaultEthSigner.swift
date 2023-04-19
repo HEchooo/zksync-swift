@@ -32,6 +32,13 @@ public class DefaultEthSigner: EthSigner {
         }
         self.keystore = keystore
     }
+    
+    public init(privateKey: Data) throws {
+        guard let keystore = PlainKeystore(privateKey: privateKey) else {
+            throw EthSignerError.invalidKey
+        }
+        self.keystore = keystore
+    }
 
     public init(mnemonic: String) throws {
         guard let keystore = try BIP32Keystore(mnemonics: mnemonic) else {
@@ -220,6 +227,11 @@ public class DefaultEthSigner: EthSigner {
                                                                account: ethereumAddress,
                                                                password: "web3swift")
         } else if let keystore = keystore as? BIP32Keystore {
+            signatureData = try Web3Signer.signPersonalMessage(message,
+                                                               keystore: keystore,
+                                                               account: ethereumAddress,
+                                                               password: "web3swift")
+        } else if let keystore = keystore as? PlainKeystore {
             signatureData = try Web3Signer.signPersonalMessage(message,
                                                                keystore: keystore,
                                                                account: ethereumAddress,
