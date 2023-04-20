@@ -1,4 +1,4 @@
-// swift-tools-version:5.3
+// swift-tools-version:5.6
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -16,16 +16,8 @@ let package = Package(
             ]),
     ],
     dependencies: [
-        .package(
-            name: "Web3swift",
-            url: "https://github.com/skywinder/web3swift.git",
-            from: "2.5.0"
-        ),
-        .package(
-            name: "Alamofire",
-            url: "https://github.com/Alamofire/Alamofire.git",
-            from: "5.4.3"
-        )
+        .package(url: "https://github.com/skywinder/web3swift.git", exact: "2.5.0"),
+        .package(url: "https://github.com/Alamofire/Alamofire.git", exact: "5.4.3")
     ],
     targets: [
         .target(
