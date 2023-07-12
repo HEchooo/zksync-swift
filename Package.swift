@@ -16,7 +16,7 @@ let package = Package(
             ]),
     ],
     dependencies: [
-        .package(url: "https://github.com/HEchooo/web3swift.git", branch: "echooo"),
+        .package(url: "https://github.com/HEchooo/web3swift.git", exact: "2.6.7"),
         .package(url: "https://github.com/Alamofire/Alamofire.git", exact: "5.7.1")
     ],
     targets: [
