@@ -59,8 +59,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/HEchooo/web3swift.git",
       "state" : {
-        "revision" : "1498cca3fc998ad32aab170d5283e8070c6f00c5",
-        "version" : "2.7.2"
+        "revision" : "561828dda134ebecfc38502d0f1a6aa80b510234",
+        "version" : "2.7.3"
       }
     }
   ],
